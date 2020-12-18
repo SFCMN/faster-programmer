@@ -1,0 +1,22 @@
+.mdc-card {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+.mdc-card__media {
+    height: 150px;
+    width: 150px;
+    margin: auto;
+}
+
+.mdc-card__media > img {
+    height: 150px;
+    width: 150px;
+}
+
+.mdc-card__title > span {
+    font-size: 1.6em;
+    text-decoration:underline;
+}
