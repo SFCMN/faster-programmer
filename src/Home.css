@@ -5,13 +5,13 @@ html, body {
     overflow: hidden;
 }
 
-.app #logo-header {
+.home #logo-header {
     width: 60%;
     height: 300px;
     margin: 120px auto 30px;
 }
 
-.app #main-content {
+.home #main-content {
     width: 80%;
     height: 300px;
     margin: 20px auto;
