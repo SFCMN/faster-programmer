@@ -16,3 +16,22 @@ html, body {
     height: 300px;
     margin: 20px auto;
 }
+.ant-modal-content {
+    border-radius: 5px;
+    border: solid 1px rgb(44, 44, 44);
+}
+
+.ant-modal-content > .ant-modal-body > .ant-modal-confirm-body-wrapper > .ant-modal-confirm-body > .anticon {
+    color: rgb(44, 44, 44);
+}
+
+.ant-modal-content > .ant-modal-body > .ant-modal-confirm-body-wrapper > .ant-modal-confirm-btns > .ant-btn {
+    background-color: white;
+    border-color: rgb(44, 44, 44);
+    color: rgb(44, 44, 44);
+}
+
+.ant-modal-content > .ant-modal-body > .ant-modal-confirm-body-wrapper > .ant-modal-confirm-btns > .ant-btn:hover {
+    background-color: rgb(44, 44, 44);
+    color: white;
+}

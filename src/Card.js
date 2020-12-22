@@ -17,7 +17,12 @@ class Card extends Component {
 
     render() {
         return (
-            <div className="mdc-card" onMouseOver={this.displayBorder} onMouseOut={this.undisplayBorder}>
+            <div
+                className="mdc-card"
+                onMouseOver={this.displayBorder}
+                onMouseOut={this.undisplayBorder}
+                onClick={this.props.hint}
+            >
                 <section className="mdc-card__media">
                     <img src={this.props.image} alt="card logo"/>
                 </section>
