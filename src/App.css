@@ -23,3 +23,30 @@
         animation: octocat-wave 560ms ease-in-out
     }
 }
+
+.sidebar {
+    width: 50px;
+    text-align: center;
+    position:fixed;
+    bottom: 30px;
+    right: 10px;
+}
+
+.sidebar > .ant-btn {
+    width: 40px;
+    height: 40px;
+    margin: 5px auto;
+    padding: 5px;
+    border: solid 1px rgb(44, 44, 44);
+    border-radius: 20px;
+}
+
+.sidebar > .ant-btn:hover {
+    color: rgb(44, 44, 44);
+    font-size: large;
+}
+
+.sidebar > .ant-btn:focus {
+    color: rgb(44, 44, 44);
+    font-size: large;
+}

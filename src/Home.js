@@ -21,7 +21,7 @@ class Home extends Component {
                 ),
                 onOk() {},
             });
-        }
+        };
         return (
             <div className="home">
                 <header id="logo-header">

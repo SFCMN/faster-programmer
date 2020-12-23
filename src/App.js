@@ -1,11 +1,43 @@
 import React, {Component} from 'react';
+import {Button, Image, Modal} from "antd";
 import Home from "./Home";
 import './App.css';
+import {LikeOutlined, MailOutlined} from "@ant-design/icons";
+import support from './support-author.png';
 
 class App extends Component {
     render() {
+        const showEmail = () => {
+            Modal.info({
+                title: "联系作者",
+                content: (
+                    <div>
+                        <p style={{marginTop: '20px', marginBottom: 0}}><code>wsfcmn@163.com</code></p>
+                    </div>
+                ),
+                maskClosable: true,
+                maskStyle: { backgroundColor: "rgba(256, 256, 256, 0.7)" },
+                icon: <MailOutlined/>,
+                onOk() {},
+            });
+        };
+        const supportAuthor = () => {
+            Modal.info({
+                title: "支持作者",
+                content: (
+                    <div>
+                        <Image width={390} src={support} style={{marginTop: '20px', marginBottom: 0}}/>
+                    </div>
+                ),
+                maskClosable: true,
+                maskStyle: { backgroundColor: "rgba(256, 256, 256, 0.7)" },
+                width: 500,
+                icon: <LikeOutlined/>,
+                onOk() {},
+            });
+        };
         return (
-            <div>
+            <div className="App">
                 <a href="https://github.com/SFCMN/faster-programmer" className="github-corner"
                    aria-label="View source on GitHub">
                     <svg width="80" height="80" viewBox="0 0 250 250"
@@ -21,6 +53,10 @@ class App extends Component {
                     </svg>
                 </a>
                 <Home/>
+                <div className="sidebar">
+                    <Button onClick={() => supportAuthor()}><span><LikeOutlined/></span></Button>
+                    <Button onClick={() => showEmail()}><span><MailOutlined/></span></Button>
+                </div>
             </div>
         );
     }

@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "./",
   "dependencies": {
+    "@ant-design/icons": "^4.3.0",
     "@material/card": "^8.0.0",
     "@material/layout-grid": "^8.0.0",
     "@testing-library/jest-dom": "^5.11.4",
