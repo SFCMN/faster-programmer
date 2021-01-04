@@ -4,6 +4,8 @@ import Home from "./Home";
 import './App.css';
 import {LikeOutlined, MailOutlined} from "@ant-design/icons";
 import support from './support-author.png';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import InProgress from "./InProgress";
 
 class App extends Component {
     render() {
@@ -52,7 +54,11 @@ class App extends Component {
                             fill="currentColor" className="octo-body"/>
                     </svg>
                 </a>
-                <Home/>
+                <Router>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/about" component={InProgress}/>
+                    <Route path="/test" component={InProgress}/>
+                </Router>
                 <div className="sidebar">
                     <Button onClick={() => supportAuthor()}><span><LikeOutlined/></span></Button>
                     <Button onClick={() => showEmail()}><span><MailOutlined/></span></Button>
