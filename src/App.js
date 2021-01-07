@@ -6,6 +6,10 @@ import {LikeOutlined, MailOutlined} from "@ant-design/icons";
 import support from './support-author.png';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import InProgress from "./InProgress";
+import Content from "./Content";
+import Keymap from "./Keymap";
+import Script from "./Script";
+import Tools from "./Tools";
 
 class App extends Component {
     render() {
@@ -56,7 +60,13 @@ class App extends Component {
                 </a>
                 <Router>
                     <Route exact path="/" component={Home}/>
-                    <Route path="/about" component={InProgress}/>
+                    <Route path="/content" render={() => (
+                        <Content>
+                            <Route extra path="/content/keymap" component={Keymap} />
+                            <Route extra path="/content/script" component={Script} />
+                            <Route extra path="/content/tools" component={Tools} />
+                        </Content>
+                    )}/>
                     <Route path="/test" component={InProgress}/>
                 </Router>
                 <div className="sidebar">

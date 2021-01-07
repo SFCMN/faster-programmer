@@ -35,3 +35,7 @@ html, body {
     background-color: rgb(44, 44, 44);
     color: white;
 }
+
+a > .mdc-card {
+    color: rgb(44, 44, 44);
+}

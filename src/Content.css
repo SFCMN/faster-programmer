@@ -1,0 +1,58 @@
+.navigation-bar {
+    height: 48px;
+    color: rgb(44, 44, 44);
+    background: -webkit-linear-gradient(to right, rgba(44, 44, 4, 1) 0%, rgba(44, 44, 44, 0) 100%);
+    background: -o-linear-gradient(to right, rgba(44, 44, 4, 1) 0%, rgba(44, 44, 44, 0) 100%);
+    background: -moz-linear-gradient(to right, rgba(44, 44, 4, 1) 0%, rgba(44, 44, 44, 0) 100%);
+    background: linear-gradient(to right, rgba(44, 44, 4, 1) 0%, rgba(44, 44, 44, 0) 100%);
+}
+
+nav {
+    height: 47px;
+    line-height: 48px;
+    background-color: white;
+}
+
+nav > ul {
+    margin: 0;
+    padding: 0 0 0 5px;
+    display: inline-block;
+    top: 2px;
+    position: absolute;
+}
+
+nav > ul > li {
+    display:inline;
+    margin: 2px 5px;
+    color: rgb(44, 44, 44);
+}
+
+nav > ul > li > a {
+    padding: 5px;
+    color: rgb(44, 44, 44);
+}
+nav > ul > li > a:hover {
+    color: rgb(44, 44, 44);
+    border: solid 1px rgb(44, 44, 44) !important;
+    border-radius: 5px;
+    font-size: 15px;
+}
+nav > ul > li > a > span {
+    margin: 2px;
+}
+
+.ant-image {
+    margin: 0 0 0 10px;
+}
+
+li .anticon > svg {
+    width: 24px;
+    height: 24px;
+    vertical-align:sub;
+}
+
+nav > ul > li > a:hover svg {
+    width: 25px;
+    height: 25px;
+    vertical-align:sub;
+}
