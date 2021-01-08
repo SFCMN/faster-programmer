@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './Card.css';
+import {Image} from "antd";
 
 class Card extends Component {
     displayBorder = (event) => {
@@ -9,7 +10,7 @@ class Card extends Component {
         }
     };
 
-    undisplayBorder = (event) => {
+    removeBorder = (event) => {
         if (this.props.enableBorder !== false) {
             event.target.style.border = "none";
         }
@@ -20,11 +21,11 @@ class Card extends Component {
             <div
                 className="mdc-card"
                 onMouseOver={this.displayBorder}
-                onMouseOut={this.undisplayBorder}
+                onMouseOut={this.removeBorder}
                 onClick={this.props.hint}
             >
                 <section className="mdc-card__media">
-                    <img src={this.props.image} alt="card logo"/>
+                    <Image src={this.props.image} preview=""/>
                 </section>
                 <section className="mdc-card__primary">
                     <h1 className="mdc-card__title mdc-card__title--large">{this.props.keyword ? <span>{this.props.keyword}</span> : ""}{this.props.title}</h1>

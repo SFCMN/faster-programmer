@@ -11,9 +11,10 @@
     margin: auto;
 }
 
-.mdc-card__media > img {
+.mdc-card__media > .ant-image {
     height: 150px;
     width: 150px;
+    margin: 0;
 }
 
 .mdc-card__title > span {
