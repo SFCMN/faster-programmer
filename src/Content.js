@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import './Content.css';
 import {Image} from "antd";
-import logo from './logo.png';
-import keymap from './keymap.svg';
-import script from './script.svg';
-import tools from './tools.svg';
+import logo from './assets/images/logo.png';
+import keymap from './assets/images/keymap.svg';
+import script from './assets/images/script.svg';
+import tools from './assets/images/tools.svg';
 
 class Content extends Component {
     render() {

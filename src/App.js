@@ -3,7 +3,7 @@ import {Button, Image, Modal} from "antd";
 import Home from "./Home";
 import './App.css';
 import {LikeOutlined, MailOutlined} from "@ant-design/icons";
-import support from './support-author.png';
+import support from './assets/images/support-author.png';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import InProgress from "./InProgress";
 import Content from "./Content";

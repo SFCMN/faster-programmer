@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import InProgress from "./InProgress";
-import {displayBottomBorder, removeBottomBorder} from "./util";
+import {displayBottomBorder, removeBottomBorder} from "./assets/js/util";
 
 class Tools extends Component {
     componentDidMount() {

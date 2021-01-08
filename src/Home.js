@@ -1,7 +1,7 @@
-import logo from './logo.png';
-import keymap from './keymap.svg';
-import script from './script.svg';
-import tools from './tools.svg';
+import logo from './assets/images/logo.png';
+import keymap from './assets/images/keymap.svg';
+import script from './assets/images/script.svg';
+import tools from './assets/images/tools.svg';
 
 import './Home.css';
 import Card from "./Card";
