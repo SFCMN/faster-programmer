@@ -1,5 +1,5 @@
 {
-  "name": "faster-programmer-2",
+  "name": "faster-programmer",
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
@@ -19,9 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "auto/build"
   },
   "eslintConfig": {
     "extends": [
