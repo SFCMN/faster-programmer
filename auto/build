@@ -2,7 +2,7 @@
 
 cd $(dirname "${0}")/..
 
-react-scripts build
+node scripts/build.js
 
 rm -rf web
 mv build/ web/
