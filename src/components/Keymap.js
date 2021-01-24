@@ -33,6 +33,14 @@ class Keymap extends Component {
         return groupedKeymaps;
     }
 
+    generateKeyMapPage = (event) => {
+        const pageName = event.target.innerHTML;
+        const hint = `作者正在玩命开发 ${pageName} 相关内容中，请耐心等待...`;
+        const content = require(`../../public/keymap/${pageName}`);
+        console.log(JSON.stringify(content, null, 2));
+        alert(hint);
+    }
+
     render() {
         const groupedKeymaps = this.listKeymaps();
         return (
@@ -47,9 +55,7 @@ class Keymap extends Component {
                                         (groupedKeymaps[letter] || [
                                             '暂无 请耐心等待',
                                         ]).map(keymap => (
-                                            <Tag key={keymap} onClick={() => {
-                                                alert('作者正在玩命开发中，请耐心等待...')
-                                            }}>{keymap}</Tag>
+                                            <Tag key={keymap} onClick={this.generateKeyMapPage}>{keymap}</Tag>
                                         ))
                                     }
                                 </div>
