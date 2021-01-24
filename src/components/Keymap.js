@@ -3,8 +3,10 @@ import InProgress from "./InProgress";
 import {displayBottomBorder, removeBottomBorder} from "../assets/js/util";
 import {Menu, Tag} from "antd";
 import './Keymap.css';
+import keymaps from "../../public/keymap/keymaps.json";
+import {chars, numbers} from "../constants";
 
-const { SubMenu } = Menu;
+const {SubMenu} = Menu;
 
 class Keymap extends Component {
     componentDidMount() {
@@ -15,25 +17,39 @@ class Keymap extends Component {
         removeBottomBorder('keymap-nav');
     }
 
+    listKeymaps = () => {
+        const groupedKeymaps = {};
+        keymaps.forEach(keymap => {
+            let firstLetter = keymap.substring(0, 1).toUpperCase();
+            numbers.includes(firstLetter) && (() => firstLetter = "0-9")();
+            groupedKeymaps[firstLetter]
+                ? (() => {
+                    groupedKeymaps[firstLetter] = [...groupedKeymaps[firstLetter], keymap].sort();
+                })()
+                : (() => {
+                    groupedKeymaps[firstLetter] = [keymap];
+                })();
+        });
+        return groupedKeymaps;
+    }
+
     render() {
-        const letters = [
-            'A', 'B', 'C', 'D', 'E', 'F', 'G',
-            'H', 'I', 'J', 'K', 'L', 'M', 'N',
-            'O', 'P', 'Q', 'R', 'S', 'T',
-            'U', 'V', 'W', 'X', 'Y', 'Z',
-        ];
+        const groupedKeymaps = this.listKeymaps();
         return (
             <div>
                 <Menu mode="vertical" className="side-menu">
                     {
-                        letters.map(letter => (
-                            <SubMenu key={letter} title={letter} expandIcon={""}>
+                        chars.map(letter => (
+                            <SubMenu key={letter} title={letter} expandIcon={""}
+                                     style={groupedKeymaps[letter] ? {} : {"display": "none"}}>
                                 <div className="keymap-items">
                                     {
-                                        [
-                                            'test1', 'test2', 'test3','test4', 'test5',
-                                        ].map(keymap => (
-                                            <Tag key={keymap} onClick={() => {alert('作者正在玩命开发中，请耐心等待...')}}>{keymap}</Tag>
+                                        (groupedKeymaps[letter] || [
+                                            '暂无 请耐心等待',
+                                        ]).map(keymap => (
+                                            <Tag key={keymap} onClick={() => {
+                                                alert('作者正在玩命开发中，请耐心等待...')
+                                            }}>{keymap}</Tag>
                                         ))
                                     }
                                 </div>
