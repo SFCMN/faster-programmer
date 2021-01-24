@@ -32,13 +32,8 @@ class Keymap extends Component {
                                     {
                                         [
                                             'test1', 'test2', 'test3','test4', 'test5',
-                                            'test1', 'test2', 'test3','test4', 'test5',
-                                            'test1', 'test2', 'test3','test4', 'test5',
-                                            'test1', 'test2', 'test3','test4', 'test5',
-                                            'test1', 'test2', 'test3','test4', 'test5',
-                                            'test1', 'test2', 'test3','test4', 'test5'
                                         ].map(keymap => (
-                                            <Tag onClick={() => {alert('作者正在玩命开发中，请耐心等待...')}}>{keymap}</Tag>
+                                            <Tag key={keymap} onClick={() => {alert('作者正在玩命开发中，请耐心等待...')}}>{keymap}</Tag>
                                         ))
                                     }
                                 </div>
