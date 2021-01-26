@@ -5,12 +5,17 @@ import {Menu, Tag} from "antd";
 import './Keymap.css';
 import keymaps from "../../public/keymap/keymaps.json";
 import {chars, numbers} from "../constants";
+import {downloadElementAsImage} from "../utils/downloadElementAsImage";
 
 const {SubMenu} = Menu;
 
 class Keymap extends Component {
     componentDidMount() {
         displayBottomBorder('keymap-nav');
+        // 测试按钮样式
+        // const btn = document.getElementById("download-image-btn");
+        // btn.style.position = "absolute";
+        // btn.style.left = (btn.parentElement.offsetWidth - 80) / 2 + "px";
     }
 
     componentWillUnmount() {
@@ -41,6 +46,12 @@ class Keymap extends Component {
         alert(hint);
     }
 
+    downloadImage = async () => {
+        const elementId = "test-div";
+        const imageName = "test.png";
+        await downloadElementAsImage(elementId, imageName);
+    };
+
     render() {
         const groupedKeymaps = this.listKeymaps();
         return (
@@ -64,6 +75,19 @@ class Keymap extends Component {
                     }
                 </Menu>
                 <InProgress text={`作者正在玩命开发 ${this.props.match.url.substring(9)} 页面中，请耐心等候...`}/>
+                {/*<div id="test-div">*/}
+                {/*    <p style={{*/}
+                {/*        border: 'solid 1px black',*/}
+                {/*        textAlign: 'center',*/}
+                {/*        margin: '100px auto',*/}
+                {/*        width: '400px',*/}
+                {/*        userSelect: 'none'*/}
+                {/*    }}>*/}
+                {/*        这是一个测试组件*/}
+                {/*    </p>*/}
+                {/*</div>*/}
+                {/*<input id="download-image-btn" type="button" value="下载" onClick={this.downloadImage}*/}
+                {/*       style={{width: "80px"}}/>*/}
             </div>
         );
     }
